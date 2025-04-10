@@ -5,6 +5,12 @@ class StartupModel {
     return await prisma.startup.findMany();
   };
 
+  getById = async (id) => {
+    return await prisma.startup.findUnique({
+      where: { id },
+    });
+  };
+
   create = async (title, description, date, location) => {
     return await prisma.startup.create({
       data: {

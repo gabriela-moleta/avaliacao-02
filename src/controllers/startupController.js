@@ -11,6 +11,20 @@ class StartupController {
     }
   };
 
+  getById = async (req, res) => {
+    const { id } = req.params;
+    try {
+      const startup = await startupModel.getById(Number(id));
+      if (!startup) {
+        return res.status(404).json({ erro: "Startup não encontrada" });
+      }
+      res.json(startup);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ erro: "Erro ao buscar startup" });
+    }
+  };
+
   create = async (req, res) => {
     const { 
       title,
