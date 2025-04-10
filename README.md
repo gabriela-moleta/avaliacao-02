@@ -109,3 +109,4 @@ http://localhost:4000/startup/1
 - Node.js
 - Express
 - Prisma
+- SQLite
