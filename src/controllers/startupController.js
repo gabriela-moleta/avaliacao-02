@@ -80,10 +80,10 @@ class StartupController {
       const sucesso = await startupModel.delete(Number(id));
 
       if (!sucesso) {
-        return res.status(404).json({ erro: "Tarefa não encontrada" });
+        return res.status(404).json({ erro: "Startup não encontrada" });
       }
 
-      res.status(200).send({ message: "Tarefa deletada com sucesso!" });
+      res.status(200).send({ message: "Startup deletada com sucesso!" });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Erro ao excluir startup!" });
