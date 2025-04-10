@@ -23,13 +23,18 @@ class StartupModel {
     });
   };
 
-  update = async (id, concluida, description) => {
+  update = async (id, title, description, date, location, capacity, category, price) => {
     try {
       const startup = await prisma.startup.update({
         where: { id },
         data: {
-          concluida: concluida !== undefined ? concluida : true,
+          title,
           description,
+          date,
+          location,
+          capacity,
+          category, 
+          price,
         },
       });
 

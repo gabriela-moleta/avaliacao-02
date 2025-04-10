@@ -48,13 +48,18 @@ class StartupController {
 
   update = async (req, res) => {
     const { id } = req.params;
-    const { concluida, description } = req.body;
+    const { title, description, date, location, capacity, category, price } = req.body;    
 
     try {
       const startupAtualizada = await startupModel.update(
         Number(id),
-        concluida,
-        description
+        title,
+        description,
+        date,
+        location,
+        capacity,
+        category,
+        price
       );
 
       if (!startupAtualizada) {
