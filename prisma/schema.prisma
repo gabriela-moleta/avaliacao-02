@@ -22,3 +22,18 @@ model Task {
 
   @@map("tasks")
 }
+
+model startup {
+  id        Int     @id @default(autoincrement())
+  title     String  
+  description String
+  date      String
+  location  String
+  capacity  Int?
+  category  String?
+  price     Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("startups") 
+}
